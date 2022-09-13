@@ -31,6 +31,9 @@ api_div.forEach(element => {
 });
 
 // PALINDROME
+// AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+// I TRIED :(
+// please tell me whats the problem
 
 let palindrome_div = document.getElementById('palindrome-div');
 
@@ -41,13 +44,34 @@ palindrome_div.addEventListener('click', ()=>{
 
     document.getElementById('fetch-palindrome').addEventListener('click', ()=>{
         
-        
-        fetch('http://localhost/myprograms/christmas.php?month=8&day=29').then(
-    res => 
-    res.json()).then(
-    data => 
-    console.log(data));
 
+        const express = require("express");
+        const app = express();
+        const cors = require("cors");
+        app.use(cors());
+
+        app.get('/', (req, res) =>{
+            res.json({month: 10, day : 10});
+        });
+        app.listen(5500, ()=>console.log('here'))
+
+
+        fetch('http://localhost/myprograms/christmas.php?month=8&day=29').then(res => res.json()).then(data => console.log(data));
+        // app.get('http://localhost/myprograms/christmas.php?month=8&day=29', (req, res)=>{
+        //     res.json()
+        // })
+
+        // console.log(app)
+    //     fetch('http://localhost/myprograms/christmas.php?month=8&day=29').then(
+    // res => 
+    // res.json()).then(
+    // data => 
+    // console.log(data));
+    
+    // axios.get('http://localhost/myprograms/christmas.php?month=8&day=29').then((res)=>{
+    //     console.log(res);
+        
+    // });
 
 
 
