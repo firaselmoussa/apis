@@ -30,7 +30,30 @@ api_div.forEach(element => {
     })
 });
 
+// PALINDROME
 
+let palindrome_div = document.getElementById('palindrome-div');
+
+palindrome_div.addEventListener('click', ()=>{
+    popup_h4.innerText = 'Enter the text you wanna test';
+
+    popup_btn.setAttribute("id", "fetch-palindrome");
+
+    document.getElementById('fetch-palindrome').addEventListener('click', ()=>{
+        
+        
+        fetch('http://localhost/myprograms/christmas.php?month=8&day=29').then(
+    res => 
+    res.json()).then(
+    data => 
+    console.log(data));
+
+
+
+
+    })
+    
+})
 
 
 
