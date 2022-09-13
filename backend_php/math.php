@@ -6,6 +6,10 @@ $c = $_GET['c'];
 
 $result = $a**3 + $b*$c - $a/$b;
 
-echo json_encode($result);
+$array = [
+    "result" => $result
+];
+
+echo json_encode( $array);
 
 ?>

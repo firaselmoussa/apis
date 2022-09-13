@@ -13,6 +13,10 @@ if($string_array == $reversed_string_array){
     $palindrome = "false";
 };
 
-echo json_encode($palindrome);
+$array = [
+    "palindrome" => $palindrome
+];
+
+echo json_encode( $array);
 
 ?>
